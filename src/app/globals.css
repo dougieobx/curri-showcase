@@ -1,26 +1,167 @@
 @import "tailwindcss";
 
+/* ============================================
+   CURRI BRAND COLORS & THEME
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Palette */
+  --curri-teal: #04EEAD;
+  --curri-teal-hover: #00d69a;
+  --curri-drywall: #FBFBF9;
+  --curri-blacktop: #1C1C1C;
+  
+  /* Extended Palette */
+  --curri-cement: #8E7D6A;
+  --curri-hiviz: #DAFE6E;
+  --curri-craneberry: #C491FB;
+  --curri-brickwork: #EF7849;
+  --curri-white: #FFFFFF;
+  
+  /* Functional */
+  --background: var(--curri-blacktop);
+  --foreground: var(--curri-white);
+  --container-max: 1200px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Curri Colors */
+  --color-curri-teal: var(--curri-teal);
+  --color-curri-teal-hover: var(--curri-teal-hover);
+  --color-curri-drywall: var(--curri-drywall);
+  --color-curri-blacktop: var(--curri-blacktop);
+  --color-curri-cement: var(--curri-cement);
+  --color-curri-hiviz: var(--curri-hiviz);
+  --color-curri-craneberry: var(--curri-craneberry);
+  --color-curri-brickwork: var(--curri-brickwork);
+  --color-curri-white: var(--curri-white);
+  
+  /* Font */
+  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   BASE STYLES
+   ============================================ */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--curri-blacktop);
+  color: var(--curri-white);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotateWord {
+  0%, 20% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  5%, 15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  20%, 100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-rotate-word {
+  animation: rotateWord 8s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
+/* Word rotation delays */
+.word-delay-1 { animation-delay: 0s; }
+.word-delay-2 { animation-delay: 2s; }
+.word-delay-3 { animation-delay: 4s; }
+.word-delay-4 { animation-delay: 6s; }
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.container-max {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Glass effect for header */
+.glass-dark {
+  background: rgba(28, 28, 28, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+/* Glow effect */
+.glow-teal {
+  background: radial-gradient(ellipse at center, rgba(4, 238, 173, 0.25) 0%, rgba(4, 238, 173, 0.08) 35%, transparent 65%);
+  filter: blur(50px);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--curri-teal);
+  color: var(--curri-blacktop);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(4, 238, 173, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: var(--curri-teal-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(4, 238, 173, 0.4);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
 }
