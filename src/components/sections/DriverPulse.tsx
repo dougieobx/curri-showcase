@@ -12,12 +12,20 @@ export default function DriverPulse() {
   // Load existing submissions from Supabase on mount
   useEffect(() => {
     async function fetchSubmissions() {
-      if (!supabase) return
+      console.log('Fetching submissions...')
+      console.log('Supabase client exists:', !!supabase)
+      
+      if (!supabase) {
+        console.log('No Supabase client - demo mode')
+        return
+      }
       
       const { data, error } = await supabase
         .from('pulse_submissions')
         .select('*')
         .order('created_at', { ascending: true })
+      
+      console.log('Fetch result:', { data, error })
       
       if (error) {
         console.error('Error fetching submissions:', error)
@@ -25,6 +33,7 @@ export default function DriverPulse() {
       }
       
       if (data) {
+        console.log('Setting submissions:', data.length, 'items')
         setSubmissions(data)
       }
     }
