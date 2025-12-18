@@ -1,13 +1,36 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PhoneMockup from '@/components/ui/PhoneMockup'
 import PulseSurvey from '@/components/ui/PulseSurvey'
 import PulseDashboard from '@/components/ui/PulseDashboard'
-import { PulseSubmission } from '@/lib/supabase'
+import { PulseSubmission, supabase } from '@/lib/supabase'
 
 export default function DriverPulse() {
   const [submissions, setSubmissions] = useState<PulseSubmission[]>([])
+
+  // Load existing submissions from Supabase on mount
+  useEffect(() => {
+    async function fetchSubmissions() {
+      if (!supabase) return
+      
+      const { data, error } = await supabase
+        .from('pulse_submissions')
+        .select('*')
+        .order('created_at', { ascending: true })
+      
+      if (error) {
+        console.error('Error fetching submissions:', error)
+        return
+      }
+      
+      if (data) {
+        setSubmissions(data)
+      }
+    }
+    
+    fetchSubmissions()
+  }, [])
 
   const handleNewSubmission = (submission: PulseSubmission) => {
     setSubmissions(prev => [...prev, submission])
