@@ -183,7 +183,7 @@ export default function Implementation() {
                     {currentPhase.rhythm?.steps.map((step, i) => (
                       <div key={i} className="flex gap-4">
                         <div className="flex flex-col items-center">
-                          <div className="w-8 h-8 rounded-full bg-curri-teal text-white flex items-center justify-center text-sm font-bold">
+                          <div className="px-4 py-1 rounded-full bg-curri-teal text-white flex items-center justify-center text-sm font-bold">
                             {i + 1}
                           </div>
                           {i < (currentPhase.rhythm?.steps.length || 0) - 1 && (

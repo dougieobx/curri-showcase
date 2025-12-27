@@ -6,6 +6,7 @@ const navItems = [
   { href: '#framework', label: 'FRAMEWORK' },
   { href: '#markets', label: 'MARKETS' },
   { href: '#hypothesis', label: 'DEEP DIVE' },
+  { href: '#plan', label: '30-60-90' },
 ];
 
 export function Header() {

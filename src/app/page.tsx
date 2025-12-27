@@ -5,6 +5,7 @@ import { Hypothesis } from "@/components/sections/Hypothesis";
 import { Solution } from "@/components/sections/Solution";
 import DriverPulse from "@/components/sections/DriverPulse";
 import Implementation from "@/components/sections/Implementation";
+import Plan from "@/components/sections/Plan";
 import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Solution />
       <DriverPulse />
       <Implementation />
+      <Plan />
       <Footer />
     </main>
   );

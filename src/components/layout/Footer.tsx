@@ -13,6 +13,10 @@ const footerLinks = [
     href: 'https://docs.google.com/spreadsheets/d/1J2zHrMu2mpwmstBONYkOYjFi0ATibjGn/edit?usp=sharing&ouid=111698837499313009950&rtpof=true&sd=true', 
     label: 'Dataset' 
   },
+  { 
+    href: 'https://docs.google.com/document/d/1HMEfcx7XViXpQ-Ezehe8A1KsHbHcNXg9SpaiR_KiDz8/edit?usp=sharing', 
+    label: '30-60-90' 
+  },
 ];
 
 export function Footer() {

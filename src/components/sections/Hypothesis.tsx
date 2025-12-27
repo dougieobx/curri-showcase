@@ -22,7 +22,7 @@ export function Hypothesis() {
               Primary Hypothesis
             </span>
             <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
-              Gig drivers can&apos;t build Curri into their routine
+              Predictable work beats better pay
             </h3>
             <p className="text-base text-white/60 leading-relaxed">
               When work feels bursty and offers aren&apos;t a strong match, drivers default back to multi-apping. They stop prioritizing Curri.
@@ -97,28 +97,28 @@ export function Hypothesis() {
             <div className="flex flex-col gap-3">
               <ValidationItem 
                 icon={<><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></>}
-                question="Are offers getting picked up slower?"
-                metric="Acceptance rate + time-to-accept trends"
+                question="Are drivers seeing inconsistent offer flow?"
+                metric="Offers per driver per day/week, time gaps between offers"
               />
               <ValidationItem 
                 icon={<><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></>}
-                question="Are we paying more to cover loads?"
-                metric="Escalation frequency trending up"
+                question="Are drivers leaving for other platforms?"
+                metric="Multi-app usage patterns, where churned drivers go"
               />
               <ValidationItem 
                 icon={<><rect x="1" y="3" width="15" height="13" rx="2" ry="2"/><path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></>}
-                question="Is there enough work per driver?"
-                metric="Offers per active gig driver per week"
+                question="Is the inconsistency predictable or random?"
+                metric="Day-of-week / time-of-day offer patterns"
               />
               <ValidationItem 
                 icon={<><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></>}
-                question="Are there coverage gaps?"
-                metric="Time-of-day / day-of-week patterns"
+                question="Are there coverage gaps we're not filling?"
+                metric="Unfilled demand windows, time-to-cover by time slot"
               />
               <ValidationItem 
                 icon={<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></>}
-                question="What are drivers saying?"
-                metric="Feedback on volume, matching, job details"
+                question="What do drivers say is the problem?"
+                metric="Survey/feedback on why they stopped driving"
               />
             </div>
           </div>
